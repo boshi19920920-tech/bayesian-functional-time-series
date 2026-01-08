@@ -21,13 +21,21 @@ This project demonstrates a Bayesian approach for recovering interpretable tempo
 - `data/`: simulated or small example datasets
 - `results/`: figures and output summaries
 
-## How to run
-Create a virtual environment, install dependencies, and run the simulation script.
-
-```bash
 python -m venv .venv
 source .venv/bin/activate  # macOS or Linux
 # .venv\Scripts\activate  # Windows PowerShell
 
 pip install -r requirements.txt
 python scripts/run_simulation.py
+
+## Example output
+
+Running the script generates the following latent signal recovery plot with posterior uncertainty.
+
+![Latent signal recovery](https://raw.githubusercontent.com/boshi19920920-tech/bayesian-functional-time-series/main/results/latent_recovery.png)
+
+
+## How to run
+Create a virtual environment, install dependencies, and run the simulation script.
+
+```bash
