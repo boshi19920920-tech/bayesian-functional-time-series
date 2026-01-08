@@ -27,3 +27,10 @@ Python and R, Bayesian modeling, time series analysis, reproducible workflows
 ## Quick start
 Open notebooks/01_simulated_example.ipynb for an end to end example on simulated high dimensional time series data.
 The notebook fits a Bayesian latent factor model in PyMC and visualizes posterior uncertainty for the recovered latent signal.
+
+## Run without notebooks
+Install dependencies, then run:
+
+python scripts/run_simulation.py
+
+The script fits a Bayesian latent time series model and saves a figure to results/latent_recovery.png
