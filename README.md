@@ -1,36 +1,33 @@
 # Bayesian Functional Time Series Modeling
 
-This repository develops Bayesian models to extract interpretable latent signals from high dimensional time series data. 
-The methods are designed for noisy, sparse, and evolving real world datasets.
+This repository provides a runnable example of Bayesian latent time series modeling for high dimensional data. 
+It produces posterior diagnostics and a latent signal recovery figure saved to results/latent_recovery.png.
 
-## Motivation
-Many real world systems generate high dimensional longitudinal data where underlying structure is unobserved and evolves over time. 
-This project focuses on uncovering such latent structure using Bayesian inference.
+## Why it matters
+Many real world datasets are high dimensional and evolve over time, while the true drivers are latent and noisy. 
+This project demonstrates a Bayesian workflow to recover interpretable temporal structure with uncertainty quantification.
 
-## Methods
-- Bayesian functional PCA and factor models
-- Temporal priors for time dependent structure
-- MCMC based inference
-- Model diagnostics and simulation based validation
-- Alignment and smoothing of latent trajectories
+## Model at a glance
+- Latent time series: Gaussian random walk prior
+- Dimension loadings: Normal priors
+- Observation model: Normal likelihood with shared noise
+- Inference: MCMC sampling in PyMC
+- Outputs: posterior diagnostics and latent recovery plot with uncertainty intervals
 
-## Repository Structure
+## Repository structure
 - src: core modeling code
 - notebooks: exploratory analysis and examples
-- scripts: runnable analysis pipelines
+- scripts: runnable pipelines
 - data: small example or simulated datasets
 - results: figures and output summaries
 
-## Tech Stack
-Python and R, Bayesian modeling, time series analysis, reproducible workflows
+## How to run
+Create a virtual environment, install dependencies, and run the script.
 
-## Quick start
-Open notebooks/01_simulated_example.ipynb for an end to end example on simulated high dimensional time series data.
-The notebook fits a Bayesian latent factor model in PyMC and visualizes posterior uncertainty for the recovered latent signal.
+```bash
+python -m venv .venv
+source .venv/bin/activate  # macOS or Linux
+# .venv\\Scripts\\activate  # Windows PowerShell
 
-## Run without notebooks
-Install dependencies, then run:
-
+pip install -r requirements.txt
 python scripts/run_simulation.py
-
-The script fits a Bayesian latent time series model and saves a figure to results/latent_recovery.png
